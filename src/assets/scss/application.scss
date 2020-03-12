@@ -6,6 +6,7 @@ $enable-shadows: true;
   background: rgba($color, $opacity);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
@@ -13,11 +14,16 @@ $enable-shadows: true;
 
 .navbar {
   user-select: none;
+  font-family: 'Damion', cursive;
+
+  .navbar-brand {
+    font-size: 1.75rem;
+  }
 }
 
 .table-responsive {
-  height: calc(100vh - 56px);
-  overflow-y: scroll;
+  height: calc(100vh - 52px);
+  // overflow-y: scroll;
 
   table {
     user-select: none;
