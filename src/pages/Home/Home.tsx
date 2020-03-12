@@ -7,14 +7,46 @@ import {
   Modal
 } from 'components';
 
-export default class Home extends Component {
+import { HomeState } from 'interfaces';
+
+import {
+  hoursGenerator,
+  datesGenerator,
+  tableGenerator
+} from 'generators';
+
+export default class Home extends Component<HomeState> {
+  public hoursList: Array<string> = [];
+  public datesList: Array<string> = [];
+
+  state = {
+    tableData: []
+  }
+
+  public generateEventsGrid() {
+    this.hoursList = hoursGenerator();
+    this.datesList = datesGenerator();
+
+    const table = tableGenerator(this.hoursList);
+
+    this.setState({
+      tableData: table
+    });
+  }
+
+  componentDidMount() {
+    this.generateEventsGrid();
+  }
+
   render() {
+    const { tableData } = this.state;
+
     return (
       <>
         <Navbar />
         <Main>
-          <Table />
-          <Modal />
+          <Table dates={this.datesList} table={tableData} />
+          {/* <Modal /> */}
         </Main>
       </>
     );

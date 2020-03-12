@@ -1,55 +1,47 @@
 import React, { FC } from 'react';
 
-const Table: FC = () => {
+import { TableProps } from 'interfaces';
+
+const Table: FC<TableProps> = ({ table, dates }) => {
   return (
     <div className="table-responsive">
       <table className="table table-bordered">
-        <caption>Total events: 7</caption>
         <thead className="thead-light text-center">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Sunday</th>
-            <th scope="col">Monday</th>
-            <th scope="col">Tuesday</th>
-            <th scope="col">Wednesday</th>
-            <th scope="col">Thursday</th>
-            <th scope="col">Friday</th>
-            <th scope="col">Saturday</th>
+            {dates.map((date, idx) => (
+              <th key={idx} scope="col" title={date}>
+                {date}
+              </th>
+            ))}
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <th scope="row" className="text-center align-middle">1</th>
-            <td>
-              <p className="mb-0">Example Title</p>
-              <small>Example description</small>
-            </td>
-            <td>
-              <p className="mb-0">Example Title</p>
-              <small>Example description</small>
-            </td>
-            <td>
-              <p className="mb-0">Example Title</p>
-              <small>Example description</small>
-            </td>
-            <td>
-              <p className="mb-0">Example Title</p>
-              <small>Example description</small>
-            </td>
-            <td>
-              <p className="mb-0">Example Title</p>
-              <small>Example description</small>
-            </td>
-            <td>
-              <p className="mb-0">Example Title</p>
-              <small>Example description</small>
-            </td>
-            <td>
-              <p className="mb-0">Example Title</p>
-              <small>Example description</small>
-            </td>
-          </tr>
+          {table.map(({ time, events }, t) => (
+            <tr key={t}>
+              <th scope="row" className="text-center align-middle">
+                {time}
+              </th>
+              {events.map(
+                (
+                  {
+                    title,
+                    description
+                  }: {
+                    title: string;
+                    description: string;
+                  },
+                  d: number
+                ) => (
+                  <td key={d} title={`${dates[d]} - ${time}`}>
+                    <p className="mb-0">{title}</p>
+                    <small>{description}</small>
+                  </td>
+                )
+              )}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
