@@ -1,7 +1,13 @@
 import React, { FC } from 'react';
 import CN from 'classnames';
 
-import { TableProps, EventProp } from 'interfaces';
+import { TableProps, EventProps } from 'interfaces';
+
+import {
+  IconHeader,
+  TimeHeader,
+  DateHeader
+} from 'components';
 
 const Table: FC<TableProps> = ({ table, dates }) => {
   const currentDay = new Date()
@@ -15,11 +21,9 @@ const Table: FC<TableProps> = ({ table, dates }) => {
       <table className="table table-bordered">
         <thead className="thead-light text-center">
           <tr>
-            <th scope="col" />
+            <IconHeader />
             {dates.map((date, idx) => (
-              <th key={idx} scope="col" title={date}>
-                {date}
-              </th>
+              <DateHeader key={idx} date={date} />
             ))}
           </tr>
         </thead>
@@ -27,21 +31,20 @@ const Table: FC<TableProps> = ({ table, dates }) => {
         <tbody>
           {table.map(({ time, events }, t) => (
             <tr key={t}>
-              <th scope="row" className="text-center align-middle">
-                {time}
-              </th>
+              <TimeHeader time={time} />
               {events.map((event: any, d: number) => (
                 <td
                   key={d}
                   title={`${dates[d]} - ${time}`}
                   className={CN({
-                    'today': currentDay === dates[d]
+                    today: currentDay === dates[d]
                   })}
                 >
                   <div className="row">
                     {event.map(
-                      ({ title, description }: EventProp, idx: number) => (
+                      ({ title, description }: EventProps, idx: number) => (
                         <div key={idx} className="col">
+                          <small>{time}</small>
                           <p className="mb-0">{title}</p>
                           <small>{description}</small>
                         </div>
