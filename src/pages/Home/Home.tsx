@@ -4,7 +4,7 @@ import {
   Main,
   Navbar,
   Table,
-  Modal
+  // Modal
 } from 'components';
 
 import { HomeState } from 'interfaces';
