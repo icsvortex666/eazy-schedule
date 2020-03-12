@@ -43,8 +43,8 @@ const Table: FC<TableProps> = ({ table, dates }) => {
                   <div className="row">
                     {event.map(
                       ({ title, description }: EventProps, idx: number) => (
-                        <div key={idx} className="col">
-                          <small>{time}</small>
+                        <div key={idx} className="col event px-1">
+                          <small className="text-secondary">{time}</small>
                           <p className="mb-0">{title}</p>
                           <small>{description}</small>
                         </div>

@@ -65,11 +65,14 @@ $enable-shadows: true;
 
     tbody {
       tr {
+        min-height: 74px;
+
         th {
           cursor: default;
           font-size: 0.75rem;
           font-weight: 600;
         }
+
         td {
           cursor: pointer;
           margin: 0;
@@ -87,6 +90,14 @@ $enable-shadows: true;
           .col {
             margin: 0;
             padding: 0;
+          }
+
+          .event {
+            border-left: 3px solid #343a40;
+
+            &:hover {
+              @include background-opacity(#343a40, 0.25);
+            }
           }
         }
       }
