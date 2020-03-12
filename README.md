@@ -1,4 +1,4 @@
-# [EazySchedule](https://eazy-schedule.afeldman.io/).
+# [EazySchedule](https://eazy-schedule.afeldman.io/)
 
 ## Available Scripts
 
