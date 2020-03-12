@@ -44,6 +44,10 @@ $enable-shadows: true;
 
           &:first-child {
             width: 1rem;
+
+            .add-event {
+              cursor: pointer;
+            }
           }
 
           &:not(:first-child) {
@@ -68,6 +72,7 @@ $enable-shadows: true;
           &.today {
             background-color: #e9ecef;
           }
+
           &:hover {
             @include background-opacity(#e9ecef, 0.75);
           }

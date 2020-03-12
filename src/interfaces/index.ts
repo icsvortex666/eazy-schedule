@@ -7,7 +7,15 @@ export interface TableProps {
   table: any[];
 }
 
-export interface EventProp {
+export interface EventProps {
   title: string;
   description: string;
+}
+
+export interface DateHeaderProps {
+  date: string;
+}
+
+export interface TimeHeaderProps {
+  time: string;
 }

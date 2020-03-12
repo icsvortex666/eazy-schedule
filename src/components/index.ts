@@ -3,11 +3,17 @@ import Main from './Main';
 import Navbar from './Navbar';
 import Table from './Table';
 import Modal from './Modal';
+import IconHeader from './IconHeader';
+import TimeHeader from './TimeHeader';
+import DateHeader from './DateHeader';
 
 export {
   App,
   Main,
   Navbar,
   Table,
-  Modal
+  Modal,
+  IconHeader,
+  TimeHeader,
+  DateHeader
 };
