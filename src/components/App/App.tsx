@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 
-import { AppProps } from './App.interfaces';
-
-const App: FC<AppProps> = () => {
+const App: FC = () => {
   return (
     <>
       App rendered
