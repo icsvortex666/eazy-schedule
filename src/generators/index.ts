@@ -23,6 +23,6 @@ export const datesGenerator = () => {
 export const tableGenerator = (hoursList: Array<string>) => {
   return Array.from(Array(24), (_, idx) => ({
     time: hoursList[idx],
-    events: Array.from(Array(7), () => ({ event: [] }))
+    events: Array.from(Array(7), () => [])
   }));
 };
