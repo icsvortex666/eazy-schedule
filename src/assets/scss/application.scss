@@ -5,3 +5,59 @@ $enable-shadows: true;
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/bootstrap';
+
+.navbar {
+  user-select: none;
+}
+
+.table-responsive {
+  height: calc(100vh - 56px);
+  overflow: scroll;
+
+  table {
+    user-select: none;
+    margin-bottom: 0;
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    th, td {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    thead {
+      tr {
+        th {
+          cursor: default;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+
+          &:first-child {
+            width: 1rem;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        th {
+          cursor: default;
+          font-size: 0.75rem;
+          font-weight: 600;
+        }
+        td {
+          cursor: pointer;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.075);
+          }
+        }
+      }
+    }
+  }
+}
+
