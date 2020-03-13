@@ -42,8 +42,14 @@ export default class Home extends Component<HomeState> {
       <>
         <Navbar />
         <Main>
-          <Table dates={this.datesList} table={tableData} />
-          <Modal />
+          <Table
+            dates={this.datesList}
+            table={tableData}
+          />
+          <Modal
+            dates={this.datesList}
+            hours={this.hoursList}
+          />
         </Main>
       </>
     );
