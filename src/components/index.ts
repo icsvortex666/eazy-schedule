@@ -6,6 +6,7 @@ import Modal from './Modal';
 import IconHeader from './IconHeader';
 import TimeHeader from './TimeHeader';
 import DateHeader from './DateHeader';
+import Event from './Event';
 
 export {
   App,
@@ -15,5 +16,6 @@ export {
   Modal,
   IconHeader,
   TimeHeader,
-  DateHeader
+  DateHeader,
+  Event
 };
