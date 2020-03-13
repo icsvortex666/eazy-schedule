@@ -3,11 +3,17 @@ export interface HomeState {
 }
 
 export interface TableProps {
-  dates: any[];
+  dates: string[];
   table: any[];
 }
 
+export interface TableEventsProps {
+  time: string;
+  events: any[];
+}
+
 export interface EventProps {
+  time: string;
   title: string;
   description: string;
 }
@@ -18,4 +24,9 @@ export interface DateHeaderProps {
 
 export interface TimeHeaderProps {
   time: string;
+}
+
+export interface ModalProps {
+  dates: string[];
+  hours: string[];
 }
