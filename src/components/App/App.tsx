@@ -7,23 +7,13 @@ import {
 
 import { Home as HomePage } from 'pages';
 
-const App: FC = () => {
-  return (
-    <Router>
-      <Switch>
-        <Route
-          exact={true}
-          path="/"
-          component={HomePage}
-        />
-        <Route
-          exact={true}
-          path="*"
-          component={HomePage}
-        />
-      </Switch>
-    </Router>
-  );
-};
+const App: FC = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="*" component={HomePage} />
+    </Switch>
+  </Router>
+);
 
 export default App;

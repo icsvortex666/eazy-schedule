@@ -17,10 +17,13 @@ import {
 
 export default class Home extends Component<HomeState> {
   public hoursList: Array<string> = [];
+
   public datesList: Array<string> = [];
 
-  state = {
-    tableData: []
+  state = { tableData: [] }
+
+  componentDidMount() {
+    this.generateEventsGrid();
   }
 
   public generateEventsGrid() {
@@ -29,13 +32,7 @@ export default class Home extends Component<HomeState> {
 
     const table = tableGenerator(this.hoursList);
 
-    this.setState({
-      tableData: table
-    });
-  }
-
-  componentDidMount() {
-    this.generateEventsGrid();
+    this.setState({ tableData: table });
   }
 
   render() {

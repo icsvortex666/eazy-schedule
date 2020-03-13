@@ -36,9 +36,7 @@ const Table: FC<TableProps> = ({ table, dates }) => {
                 <td
                   key={d}
                   title={`${dates[d]} - ${time}`}
-                  className={CN({
-                    today: currentDay === dates[d]
-                  })}
+                  className={CN({ today: currentDay === dates[d] })}
                 >
                   <div className="row">
                     {event.map(
