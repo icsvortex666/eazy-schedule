@@ -6,7 +6,7 @@ $enable-shadows: true;
   background: rgba($color, $opacity);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
+@import url("https://use.typekit.net/whi5lfr.css");
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
@@ -14,7 +14,9 @@ $enable-shadows: true;
 
 .navbar {
   user-select: none;
-  font-family: 'Damion', cursive;
+  font-family: ganache, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
   .navbar-brand {
     font-size: 1.75rem;
@@ -65,8 +67,6 @@ $enable-shadows: true;
 
     tbody {
       tr {
-        min-height: 74px;
-
         th {
           cursor: default;
           font-size: 0.75rem;
