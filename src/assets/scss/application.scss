@@ -57,10 +57,6 @@ $enable-shadows: true;
               cursor: pointer;
             }
           }
-
-          &:not(:first-child) {
-            width: fit-content;
-          }
         }
       }
     }
