@@ -4,7 +4,7 @@ import {
   Main,
   Navbar,
   Table,
-  // Modal
+  Modal
 } from 'components';
 
 import { HomeState } from 'interfaces';
@@ -46,7 +46,7 @@ export default class Home extends Component<HomeState> {
         <Navbar />
         <Main>
           <Table dates={this.datesList} table={tableData} />
-          {/* <Modal /> */}
+          <Modal />
         </Main>
       </>
     );

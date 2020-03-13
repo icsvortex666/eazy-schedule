@@ -8,6 +8,8 @@ const IconHeader: FC = () => (
       icon={faPlusCircle}
       size="lg"
       className="add-event align-middle"
+      data-toggle="modal"
+      data-target="#modalEvent"
     />
   </th>
 );
