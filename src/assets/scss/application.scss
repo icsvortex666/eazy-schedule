@@ -23,7 +23,7 @@ $enable-shadows: true;
 
 .table-responsive {
   height: calc(100vh - 52px);
-  // overflow-y: scroll;
+  overflow: auto;
 
   table {
     user-select: none;
