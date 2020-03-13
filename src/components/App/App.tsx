@@ -10,8 +10,16 @@ import { Home as HomePage } from 'pages';
 const App: FC = () => (
   <Router>
     <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="*" component={HomePage} />
+      <Route
+        exact
+        path="/"
+        component={HomePage}
+      />
+      <Route
+        exact
+        path="*"
+        component={HomePage}
+      />
     </Switch>
   </Router>
 );
