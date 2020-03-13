@@ -57,6 +57,7 @@ module.exports = {
         ExportDeclaration: { multiline: true, minProperties: 3 }
       }
     ],
+    'react/jsx-first-prop-new-line': 'warn',
     'arrow-parens': 'off',
     'react/no-unused-state': 'off',
     'react/state-in-constructor': 'off',
