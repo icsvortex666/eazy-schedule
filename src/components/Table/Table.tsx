@@ -3,8 +3,6 @@ import CN from 'classnames';
 
 import {
   IconHeader,
-  TimeHeader,
-  DateHeader,
   Event
 } from 'components';
 
@@ -26,10 +24,13 @@ const Table: FC<TableProps> = ({
       <tr>
         <IconHeader />
         {dates.map((date: string, DatesIdx: number) => (
-          <DateHeader
+          <th
             key={DatesIdx}
-            date={date}
-          />
+            scope="col"
+            title={date}
+          >
+            {date}
+          </th>
         ))}
       </tr>
     </thead>
@@ -49,7 +50,13 @@ const Table: FC<TableProps> = ({
     <tbody>
       {table.map(({ time, events }: TableEventsProps, TimeIdx: number) => (
         <tr key={TimeIdx}>
-          <TimeHeader time={time} />
+          <th
+            scope="row"
+            title={time}
+            className="text-center align-middle"
+          >
+            {time}
+          </th>
           {events.map((event: any[], DateIdx: number) => (
             <td
               key={DateIdx}
