@@ -27,8 +27,8 @@ export default class Home extends Component<HomeState> {
   state = {
     tableData: [],
     currentDay: dateWithFormat(this.currentDate),
-    selectedDate: 0,
-    selectedTime: 0,
+    selectedDate: -1,
+    selectedTime: -1,
   }
 
   componentDidMount() {
@@ -45,8 +45,8 @@ export default class Home extends Component<HomeState> {
 
   public resetSelectedDateTime() {
     this.setState({
-      selectedDate: 0,
-      selectedTime: 0,
+      selectedDate: -1,
+      selectedTime: -1,
     });
   }
 
