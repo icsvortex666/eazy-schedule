@@ -1,11 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import CN from 'classnames';
-
-import {
-  TableProps,
-  TableEventsProps,
-  EventProps
-} from 'interfaces';
 
 import {
   IconHeader,
@@ -14,13 +8,19 @@ import {
   Event
 } from 'components';
 
-const Table: FC<TableProps> = ({ table, dates }) => {
-  const currentDay = new Date()
-    .toDateString()
-    .replace(/\d{4}$/, '')
-    .replace(' ', ', ')
-    .trimEnd();
+import {
+  TableProps,
+  TableEventsProps,
+  EventProps
+} from 'interfaces';
 
+const Table: FC<TableProps> = ({
+  table,
+  currentDay,
+  dates,
+  onSelectedDate,
+  onSelectedTime,
+}) => {
   const tableHead = (
     <thead className="thead-light text-center">
       <tr>
@@ -35,6 +35,16 @@ const Table: FC<TableProps> = ({ table, dates }) => {
     </thead>
   );
 
+  const handleClickEvent = (
+    e: MouseEvent<HTMLTableDataCellElement>,
+    DateIdx: number,
+    TimeIdx: number
+  ) => {
+    e.preventDefault();
+    onSelectedDate(DateIdx);
+    onSelectedTime(TimeIdx);
+  };
+
   const tableBody = (
     <tbody>
       {table.map(({ time, events }: TableEventsProps, TimeIdx: number) => (
@@ -43,8 +53,15 @@ const Table: FC<TableProps> = ({ table, dates }) => {
           {events.map((event: any[], DateIdx: number) => (
             <td
               key={DateIdx}
+              data-toggle="modal"
+              data-target="#modalEvent"
               title={`${dates[DateIdx]} - ${time}`}
               className={CN({ today: currentDay === dates[DateIdx] })}
+              onClick={
+                (e: MouseEvent<HTMLTableDataCellElement>) => {
+                  handleClickEvent(e, DateIdx, TimeIdx);
+                }
+              }
             >
               <div className="row">
                 {event.map(

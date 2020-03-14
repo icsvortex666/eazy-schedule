@@ -7,48 +7,82 @@ import {
   Modal
 } from 'components';
 
-import { HomeState } from 'interfaces';
-
 import {
   hoursGenerator,
   datesGenerator,
   tableGenerator
 } from 'generators';
 
+import { HomeState } from 'interfaces';
+
+import { dateWithFormat } from 'helpers';
+
 export default class Home extends Component<HomeState> {
   public hoursList: Array<string> = [];
 
   public datesList: Array<string> = [];
 
-  state = { tableData: [] }
+  public currentDate: Date = new Date();
+
+  state = {
+    tableData: [],
+    currentDay: dateWithFormat(this.currentDate),
+    selectedDate: 0,
+    selectedTime: 0,
+  }
 
   componentDidMount() {
     this.generateEventsGrid();
   }
 
+  public setSelectedDate(DateIdx: number) {
+    this.setState({ selectedDate: DateIdx });
+  }
+
+  public setSelectedTime(TimeIdx: number) {
+    this.setState({ selectedTime: TimeIdx });
+  }
+
+  public resetSelectedDateTime() {
+    this.setState({
+      selectedDate: 0,
+      selectedTime: 0,
+    });
+  }
+
   public generateEventsGrid() {
     this.hoursList = hoursGenerator();
-    this.datesList = datesGenerator();
-
-    const table = tableGenerator(this.hoursList);
-
-    this.setState({ tableData: table });
+    this.datesList = datesGenerator(this.currentDate);
+    this.setState({ tableData: tableGenerator(this.hoursList) });
   }
 
   render() {
-    const { tableData } = this.state;
+    const {
+      tableData,
+      selectedDate,
+      selectedTime,
+      currentDay,
+    } = this.state;
 
     return (
       <>
         <Navbar />
         <Main>
           <Table
-            dates={this.datesList}
             table={tableData}
+            currentDay={currentDay}
+            dates={this.datesList}
+            onSelectedDate={(DateIdx) => this.setSelectedDate(DateIdx)}
+            onSelectedTime={(TimeIdx) => this.setSelectedTime(TimeIdx)}
           />
           <Modal
+            date={selectedDate}
+            time={selectedTime}
             dates={this.datesList}
             hours={this.hoursList}
+            onSelectedDate={(DateIdx) => this.setSelectedDate(DateIdx)}
+            onSelectedTime={(TimeIdx) => this.setSelectedTime(TimeIdx)}
+            onResetSelects={() => this.resetSelectedDateTime()}
           />
         </Main>
       </>
