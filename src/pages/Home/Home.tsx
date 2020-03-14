@@ -69,7 +69,7 @@ export default class Home extends Component<HomeState> {
         <Navbar />
         <Main>
           <Table
-            table={tableData}
+            tableEvents={tableData}
             currentDay={currentDay}
             dates={this.datesList}
             onSelectedDate={(DateIdx) => this.setSelectedDate(DateIdx)}

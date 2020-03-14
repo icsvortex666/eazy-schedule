@@ -6,7 +6,7 @@ export interface HomeState {
 }
 
 export interface TableProps {
-  table: any[];
+  tableEvents: any[];
   currentDay: string;
   dates: string[];
   onSelectedDate: (date: number) => void;

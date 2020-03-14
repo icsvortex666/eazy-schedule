@@ -13,7 +13,7 @@ import {
 } from 'interfaces';
 
 const Table: FC<TableProps> = ({
-  table,
+  tableEvents,
   currentDay,
   dates,
   onSelectedDate,
@@ -48,7 +48,7 @@ const Table: FC<TableProps> = ({
 
   const tableBody = (
     <tbody>
-      {table.map(({ time, events }: TableEventsProps, TimeIdx: number) => (
+      {tableEvents.map(({ time, events }: TableEventsProps, TimeIdx: number) => (
         <tr key={TimeIdx}>
           <th
             scope="row"
