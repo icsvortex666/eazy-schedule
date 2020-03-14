@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { EventProps } from 'interfaces';
 
-const Event: React.FunctionComponent<EventProps> = ({
+const Event: FC<EventProps> = ({
   time,
   title,
   description,
