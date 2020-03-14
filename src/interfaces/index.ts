@@ -1,10 +1,16 @@
 export interface HomeState {
   tableData: any[];
+  currentDay: string;
+  selectedDate: any;
+  selectedTime: any;
 }
 
 export interface TableProps {
-  dates: string[];
   table: any[];
+  currentDay: string;
+  dates: string[];
+  onSelectedDate: (date: number) => void;
+  onSelectedTime: (time: number) => void;
 }
 
 export interface TableEventsProps {
@@ -27,6 +33,11 @@ export interface TimeHeaderProps {
 }
 
 export interface ModalProps {
+  date: number;
+  time: number;
   dates: string[];
   hours: string[];
+  onSelectedDate: (date: number) => void;
+  onSelectedTime: (time: number) => void;
+  onResetSelects: () => void;
 }
