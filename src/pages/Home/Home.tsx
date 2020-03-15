@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import update from 'immutability-helper';
 
 import {
   Main,
@@ -43,11 +44,8 @@ export default class Home extends Component<HomeState> {
     this.setState({ selectedTime: TimeIdx });
   }
 
-  public resetSelectedDateTime() {
-    this.setState({
-      selectedDate: -1,
-      selectedTime: -1,
-    });
+  public createEvent(eventData: any) {
+    console.log(eventData);
   }
 
   public generateEventsGrid() {
@@ -82,7 +80,7 @@ export default class Home extends Component<HomeState> {
             hours={this.hoursList}
             onSelectedDate={(DateIdx) => this.setSelectedDate(DateIdx)}
             onSelectedTime={(TimeIdx) => this.setSelectedTime(TimeIdx)}
-            onResetSelects={() => this.resetSelectedDateTime()}
+            onSubmit={(eventData) => this.createEvent(eventData)}
           />
         </Main>
       </>

@@ -12,7 +12,7 @@ const Modal: FC<ModalProps> = ({
   hours,
   onSelectedDate,
   onSelectedTime,
-  onResetSelects,
+  // onSubmit,
 }) => {
   const handleChange = (e: FormEvent<HTMLSelectElement>) => {
     const { currentTarget } = e;
@@ -30,6 +30,10 @@ const Modal: FC<ModalProps> = ({
     }
   };
 
+  const handleSubmit = (eventData: any) => {
+    console.log(eventData);
+  };
+
   return (
     <div
       id="modalEvent"
@@ -38,7 +42,6 @@ const Modal: FC<ModalProps> = ({
       role="dialog"
       aria-labelledby="modalEventTitle"
       aria-hidden="true"
-      onClick={onResetSelects}
     >
       <div
         className="modal-dialog modal-dialog-centered"
@@ -57,7 +60,6 @@ const Modal: FC<ModalProps> = ({
               className="close"
               data-dismiss="modal"
               aria-label="Close"
-              onClick={onResetSelects}
             >
               <span aria-hidden="true">&times;</span>
             </button>
@@ -145,13 +147,13 @@ const Modal: FC<ModalProps> = ({
               type="button"
               className="btn btn-secondary"
               data-dismiss="modal"
-              onClick={onResetSelects}
             >
               Close
             </button>
             <button
               type="button"
               className="btn btn-primary"
+              onClick={(e: FormEvent<HTMLButtonElement>) => handleSubmit(e)}
             >
               Save changes
             </button>
