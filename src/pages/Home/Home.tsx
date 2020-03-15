@@ -44,10 +44,6 @@ export default class Home extends Component<HomeState> {
     this.setState({ selectedTime: TimeIdx });
   }
 
-  public createEvent(eventData: any) {
-    console.log(eventData);
-  }
-
   public generateEventsGrid() {
     this.hoursList = hoursGenerator();
     this.datesList = datesGenerator(this.currentDate);
@@ -80,7 +76,6 @@ export default class Home extends Component<HomeState> {
             hours={this.hoursList}
             onSelectedDate={(DateIdx) => this.setSelectedDate(DateIdx)}
             onSelectedTime={(TimeIdx) => this.setSelectedTime(TimeIdx)}
-            onSubmit={(eventData) => this.createEvent(eventData)}
           />
         </Main>
       </>

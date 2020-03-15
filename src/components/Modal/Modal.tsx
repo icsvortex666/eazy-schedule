@@ -12,7 +12,6 @@ const Modal: FC<ModalProps> = ({
   hours,
   onSelectedDate,
   onSelectedTime,
-  // onSubmit,
 }) => {
   const handleChange = (e: FormEvent<HTMLSelectElement>) => {
     const { currentTarget } = e;
@@ -28,10 +27,6 @@ const Modal: FC<ModalProps> = ({
       default:
         break;
     }
-  };
-
-  const handleSubmit = (eventData: any) => {
-    console.log(eventData);
   };
 
   return (
@@ -153,7 +148,6 @@ const Modal: FC<ModalProps> = ({
             <button
               type="button"
               className="btn btn-primary"
-              onClick={(e: FormEvent<HTMLButtonElement>) => handleSubmit(e)}
             >
               Save changes
             </button>

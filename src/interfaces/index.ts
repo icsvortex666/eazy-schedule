@@ -39,5 +39,4 @@ export interface ModalProps {
   hours: string[];
   onSelectedDate: (date: number) => void;
   onSelectedTime: (time: number) => void;
-  onSubmit: (eventData: any) => void;
 }
