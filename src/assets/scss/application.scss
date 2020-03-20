@@ -36,7 +36,8 @@ $enable-shadows: true;
     table-layout: fixed;
 
     th,
-    td {
+    td,
+    * {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -52,7 +53,7 @@ $enable-shadows: true;
           z-index: 10;
 
           &:first-child {
-            width: 61px;
+            width: 63px;
 
             .add-event {
               cursor: pointer;
@@ -74,9 +75,9 @@ $enable-shadows: true;
           cursor: pointer;
           margin: 0;
           padding: 0;
-          min-height: 74px;
-          height: 74px;
-          max-height: 74px;
+          min-height: 76px;
+          height: 76px;
+          max-height: 76px;
 
           &.today {
             background-color: #e9ecef;
@@ -94,6 +95,8 @@ $enable-shadows: true;
 
           .event {
             border-left: 3px solid #343a40;
+            min-width: 5px;
+            min-height: 74px;
 
             &:hover {
               @include background-opacity(#343a40, 0.25);

@@ -22,6 +22,7 @@ export interface TableEventsProps {
 }
 
 export interface EventProps {
+  count: number;
   time: string;
   title: string;
   description: string;

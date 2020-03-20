@@ -75,6 +75,7 @@ const Table: FC<TableProps> = ({
                 {event.map(
                   ({ title, description }: EventProps, EventIdx: number) => (
                     <Event
+                      count={event.length}
                       key={EventIdx}
                       time={time}
                       title={title}
