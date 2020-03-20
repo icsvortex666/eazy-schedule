@@ -85,6 +85,43 @@ export default class Home extends Component<HomeState> {
     });
   }
 
+  // public updateEvent = (EventData: any) => {
+  //   const {
+  //     id,
+  //     title,
+  //     description,
+  //   } = EventData;
+  //   const {
+  //     tableData,
+  //     selectedDate,
+  //     selectedTime,
+  //   } = this.state;
+
+  //   this.setState(prevState => {
+  //     const eventsList: any[] = tableData;
+
+  //     return {
+  //       ...prevState,
+  //       tableData: update(eventsList, {
+  //         [selectedTime]: {
+  //           events: {
+  //             [selectedDate]: {
+  //               [id]: {
+  //                 $set: [
+  //                   {
+  //                     title,
+  //                     description,
+  //                   },
+  //                 ],
+  //               },
+  //             },
+  //           },
+  //         },
+  //       }),
+  //     };
+  //   });
+  // }
+
   public generateEventsGrid = () => {
     this.hoursList = hoursGenerator();
     this.datesList = datesGenerator(this.currentDate);
