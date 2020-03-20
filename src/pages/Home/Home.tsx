@@ -156,8 +156,8 @@ export default class Home extends Component<HomeState> {
             tableEvents={tableData}
             currentDay={currentDay}
             dates={this.datesList}
-            onSelectedDate={(DateIdx) => this.setSelectedDate(DateIdx)}
-            onSelectedTime={(TimeIdx) => this.setSelectedTime(TimeIdx)}
+            onSelectedDate={(DateIdx: number) => this.setSelectedDate(DateIdx)}
+            onSelectedTime={(TimeIdx: number) => this.setSelectedTime(TimeIdx)}
             onCreateEventButton={() => this.resetEventsState()}
           />
           <Modal
@@ -167,11 +167,13 @@ export default class Home extends Component<HomeState> {
             description={selectedDescription}
             dates={this.datesList}
             hours={this.hoursList}
-            onSelectedTitle={(title) => this.setSelectedTitle(title)}
-            onSelectedDescription={(description) => this.setSelectedDescription(description)}
-            onSelectedDate={(DateIdx) => this.setSelectedDate(DateIdx)}
-            onSelectedTime={(TimeIdx) => this.setSelectedTime(TimeIdx)}
-            onCreateEvent={(EventData) => this.createEvent(EventData)}
+            onSelectedTitle={(title: string) => this.setSelectedTitle(title)}
+            onSelectedDescription={
+              (description: string) => this.setSelectedDescription(description)
+            }
+            onSelectedDate={(DateIdx: number) => this.setSelectedDate(DateIdx)}
+            onSelectedTime={(TimeIdx: number) => this.setSelectedTime(TimeIdx)}
+            onCreateEvent={(EventData: any) => this.createEvent(EventData)}
           />
         </Main>
       </>
