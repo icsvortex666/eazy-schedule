@@ -84,10 +84,19 @@ const Modal: FC<ModalProps> = ({
       aria-labelledby="modalEventTitle"
       aria-hidden="true"
     >
-      <div className="modal-dialog modal-dialog-centered" role="document">
-        <form className="modal-content" onSubmit={handleSubmit}>
+      <div
+        className="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <form
+          className="modal-content"
+          onSubmit={handleSubmit}
+        >
           <div className="modal-header border-bottom-0">
-            <h5 id="modalEventTitle" className="modal-title">
+            <h5
+              id="modalEventTitle"
+              className="modal-title"
+            >
               Create New Event
             </h5>
             <button
@@ -101,7 +110,10 @@ const Modal: FC<ModalProps> = ({
           </div>
           <div className="modal-body py-0">
             <div className="form-group">
-              <label htmlFor="title" className="col-form-label text-dark">
+              <label
+                htmlFor="title"
+                className="col-form-label text-dark"
+              >
                 Title:
               </label>
               <input
@@ -117,7 +129,10 @@ const Modal: FC<ModalProps> = ({
             </div>
             <div className="form-row">
               <div className="form-group col-sm-6">
-                <label htmlFor="date" className="text-dark">
+                <label
+                  htmlFor="date"
+                  className="text-dark"
+                >
                   Date
                 </label>
                 <select
@@ -138,7 +153,10 @@ const Modal: FC<ModalProps> = ({
               </div>
 
               <div className="form-group col-sm-6">
-                <label htmlFor="time" className="text-dark">
+                <label
+                  htmlFor="time"
+                  className="text-dark"
+                >
                   Time
                 </label>
                 <select
@@ -184,10 +202,7 @@ const Modal: FC<ModalProps> = ({
             >
               Close
             </button>
-            <button
-              type="submit"
-              className="btn btn-primary"
-            >
+            <button type="submit" className="btn btn-primary">
               Save changes
             </button>
           </div>
