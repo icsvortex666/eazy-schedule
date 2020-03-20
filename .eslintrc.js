@@ -72,6 +72,7 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'class-methods-use-this': 'off',
     'no-unused-expressions': 'off',
-    'no-unneeded-ternary': 'off'
+    'no-unneeded-ternary': 'off',
+    'dot-notation': 'off'
   }
 };
