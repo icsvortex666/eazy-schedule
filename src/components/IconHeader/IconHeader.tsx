@@ -2,7 +2,9 @@ import React, { FC } from 'react';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
-const IconHeader: FC = () => (
+import { IconHeaderProps } from 'interfaces';
+
+const IconHeader: FC<IconHeaderProps> = ({ onCreateEventButton }) => (
   <th scope="col">
     <Icon
       icon={faPlusCircle}
@@ -10,6 +12,7 @@ const IconHeader: FC = () => (
       className="add-event align-middle"
       data-toggle="modal"
       data-target="#modalEvent"
+      onClick={onCreateEventButton}
     />
   </th>
 );

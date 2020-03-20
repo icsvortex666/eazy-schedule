@@ -18,11 +18,12 @@ const Table: FC<TableProps> = ({
   dates,
   onSelectedDate,
   onSelectedTime,
+  onCreateEventButton,
 }) => {
   const tableHead = (
     <thead className="thead-light text-center">
       <tr>
-        <IconHeader />
+        <IconHeader onCreateEventButton={onCreateEventButton} />
         {dates.map((date: string, DatesIdx: number) => (
           <th
             key={DatesIdx}
