@@ -6,7 +6,7 @@ $enable-shadows: true;
   background: rgba($color, $opacity);
 }
 
-@import url("https://use.typekit.net/whi5lfr.css");
+@import url('https://use.typekit.net/whi5lfr.css');
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
@@ -33,6 +33,7 @@ $enable-shadows: true;
     position: relative;
     border-collapse: separate;
     border-spacing: 0;
+    table-layout: fixed;
 
     th,
     td {
@@ -51,7 +52,7 @@ $enable-shadows: true;
           z-index: 10;
 
           &:first-child {
-            width: 1rem;
+            width: 61px;
 
             .add-event {
               cursor: pointer;
@@ -73,6 +74,9 @@ $enable-shadows: true;
           cursor: pointer;
           margin: 0;
           padding: 0;
+          min-height: 74px;
+          height: 74px;
+          max-height: 74px;
 
           &.today {
             background-color: #e9ecef;
